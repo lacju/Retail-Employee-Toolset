@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{843213BD-FBDB-43C7-8523-F6FF2293FB61}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>retailemployeetoolset</RootNamespace>
+    <AssemblyName>retailemployeetoolset</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>TryMobileApp_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Assets\SKUList\SKUList.csv" />
+    <None Include="Connected Services\retailemployeetoolsetMobileApp\ConnectedService.json" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\AuthenticationHelper.cs" />
+    <Compile Include="Common\AzureDataService.cs" />
+    <Compile Include="Common\CodeHoldert.cs" />
+    <Compile Include="Common\DataManager.cs" />
+    <Compile Include="Common\QuickStartTask.xaml.cs">
+      <DependentUpon>QuickStartTask.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\SolutionHelper.cs" />
+    <Compile Include="Common\WebReader.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductCatalogProduct.cs" />
+    <Compile Include="Models\ProductCatalogProductStore.cs" />
+    <Compile Include="Models\QueueCustomer.cs" />
+    <Compile Include="Models\Solution.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AnswerDeskViewModel.cs" />
+    <Compile Include="ViewModels\ConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\HomePageViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\NavViewModel.cs" />
+    <Compile Include="ViewModels\OEMViewModel.cs" />
+    <Compile Include="ViewModels\OfficeViewModel.cs" />
+    <Compile Include="ViewModels\ProductCatalogViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="ViewModels\PurchaseDeviceViewModel.cs" />
+    <Compile Include="ViewModels\QueueViewModel.cs" />
+    <Compile Include="ViewModels\SleeveSelectionViewModel.cs" />
+    <Compile Include="ViewModels\SolutionPageViewModel.cs" />
+    <Compile Include="ViewModels\SolutionViewModel.cs" />
+    <Compile Include="ViewModels\SurfaceViewModelBase.cs" />
+    <Compile Include="ViewModels\AnswerDeskVoiceCommand.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="ViewModels\XboxViewModel.cs" />
+    <Compile Include="Views\AnswerDeskView.xaml.cs">
+      <DependentUpon>AnswerDeskView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConfigurationView.xaml.cs">
+      <DependentUpon>ConfigurationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerDatabaseControl.xaml.cs">
+      <DependentUpon>CustomerDatabaseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExtendedSplash.xaml.cs">
+      <DependentUpon>ExtendedSplash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GreeterView.xaml.cs">
+      <DependentUpon>GreeterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePageView.xaml.cs">
+      <DependentUpon>HomePageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavView.xaml.cs">
+      <DependentUpon>NavView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OEMView.xaml.cs">
+      <DependentUpon>OEMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OfficeView.xaml.cs">
+      <DependentUpon>OfficeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductCatalogView.xaml.cs">
+      <DependentUpon>ProductCatalogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProductViewer.xaml.cs">
+      <DependentUpon>ProductViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDeviceView.xaml.cs">
+      <DependentUpon>PurchaseDeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SelectSleeveView.xaml.cs">
+      <DependentUpon>SelectSleeveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SolutionView.xaml.cs">
+      <DependentUpon>SolutionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SurfaceBookView.xaml.cs">
+      <DependentUpon>SurfaceBookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SurfaceLaptopView.xaml.cs">
+      <DependentUpon>SurfaceLaptopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SurfaceProView.xaml.cs">
+      <DependentUpon>SurfaceProView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SurfaceSelectedView.xaml.cs">
+      <DependentUpon>SurfaceSelectedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SurfaceStudioView.xaml.cs">
+      <DependentUpon>SurfaceStudioView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\XboxView.xaml.cs">
+      <DependentUpon>XboxView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\alcantara button_edited.jpg" />
+    <Content Include="Assets\msstorefront.PNG" />
+    <Content Include="Assets\OfficeBoxes\officehbbox.png" />
+    <Content Include="Assets\OfficeBoxes\officehomebox.png" />
+    <Content Include="Assets\OfficeBoxes\officehsbox.png" />
+    <Content Include="Assets\OfficeBoxes\officepersonal.png" />
+    <Content Include="Assets\OfficeLogos\accessLogo.png" />
+    <Content Include="Assets\OfficeLogos\excelLogo.png" />
+    <Content Include="Assets\OfficeLogos\onedriveLogo.png" />
+    <Content Include="Assets\OfficeLogos\onenoteLogo.png" />
+    <Content Include="Assets\OfficeLogos\outlookLogo.png" />
+    <Content Include="Assets\OfficeLogos\powerpointLogo.png" />
+    <Content Include="Assets\OfficeLogos\publisherLogo.png" />
+    <Content Include="Assets\OfficeLogos\skypeLogo.png" />
+    <Content Include="Assets\OfficeLogos\WordLogo.png" />
+    <Content Include="Assets\ProductDatabase.txt" />
+    <Content Include="Assets\SBIcon.png" />
+    <Content Include="Assets\SLIcon.png" />
+    <Content Include="Assets\SPIcon.png" />
+    <Content Include="Assets\SPIcon1.png" />
+    <Content Include="Assets\SPIcon2.png" />
+    <Content Include="Assets\SPSpecBox.png" />
+    <Content Include="Assets\SSIcon.png" />
+    <Content Include="Assets\SSIcon2.png" />
+    <Content Include="Assets\Surface Laptop.png" />
+    <Content Include="Assets\surfacebook.png" />
+    <Content Include="Assets\surfacepro4.png" />
+    <Content Include="Assets\surfacestudio.png" />
+    <Content Include="Assets\VisualAssets\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\VisualAssets\BadgeLogo.scale-125.png" />
+    <Content Include="Assets\VisualAssets\BadgeLogo.scale-150.png" />
+    <Content Include="Assets\VisualAssets\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\VisualAssets\BadgeLogo.scale-400.png" />
+    <Content Include="Assets\VisualAssets\LargeTile.scale-100.png" />
+    <Content Include="Assets\VisualAssets\LargeTile.scale-125.png" />
+    <Content Include="Assets\VisualAssets\LargeTile.scale-150.png" />
+    <Content Include="Assets\VisualAssets\LargeTile.scale-200.png" />
+    <Content Include="Assets\VisualAssets\LargeTile.scale-400.png" />
+    <Content Include="Assets\VisualAssets\SmallTile.scale-100.png" />
+    <Content Include="Assets\VisualAssets\SmallTile.scale-125.png" />
+    <Content Include="Assets\VisualAssets\SmallTile.scale-150.png" />
+    <Content Include="Assets\VisualAssets\SmallTile.scale-200.png" />
+    <Content Include="Assets\VisualAssets\SmallTile.scale-400.png" />
+    <Content Include="Assets\VisualAssets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\VisualAssets\SplashScreen.scale-125.png" />
+    <Content Include="Assets\VisualAssets\SplashScreen.scale-150.png" />
+    <Content Include="Assets\VisualAssets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\VisualAssets\SplashScreen.scale-400.png" />
+    <Content Include="Assets\VisualAssets\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\VisualAssets\Square150x150Logo.scale-125.png" />
+    <Content Include="Assets\VisualAssets\Square150x150Logo.scale-150.png" />
+    <Content Include="Assets\VisualAssets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\VisualAssets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.scale-125.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.scale-150.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.targetsize-16.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.targetsize-24.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.targetsize-256.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.targetsize-32.png" />
+    <Content Include="Assets\VisualAssets\Square44x44Logo.targetsize-48.png" />
+    <Content Include="Assets\VisualAssets\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\VisualAssets\Wide310x150Logo.scale-125.png" />
+    <Content Include="Assets\VisualAssets\Wide310x150Logo.scale-150.png" />
+    <Content Include="Assets\VisualAssets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Assets\VisualAssets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\VoiceCommandDefinition.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="SplashScreenLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Common\QuickStartTask.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AnswerDeskView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConfigurationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomerDatabaseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExtendedSplash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GreeterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomePageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OEMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OfficeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductCatalogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProductViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDeviceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SelectSleeveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SolutionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SurfaceBookView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SurfaceLaptopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SurfaceProView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SurfaceSelectedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SurfaceStudioView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\XboxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\VCD\" />
+    <Folder Include="Assets\VisualAssetts\" />
+    <Folder Include="Cortana\" />
+    <Folder Include="DataModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RetailEmployeeToolkitAppService\RetailEmployeeToolkitAppService.csproj">
+      <Project>{4b0b4264-7d96-413e-929c-8c5f9d2f9498}</Project>
+      <Name>RetailEmployeeToolkitAppService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

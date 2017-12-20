@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="RetailEmployeeToolsetCommandSet_en-us">
+    <AppName> Retail Employee Toolset </AppName>
+    <Example> Schedule an {appointmentType} appointment </Example>
+
+    <Command Name="scheduleAppointment">
+      <Example> Schedule an {appointmentType} </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> schedule an {appointmentType} </ListenFor>
+      <Feedback> Scheduling an {appointmentType} </Feedback>
+      <Navigate />
+    </Command>
+
+    <Command Name="nextAvailableAnswerDesk">
+      <Example> When is the next available {appointmentType} </Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase"> when is the next available {appointmentType} </ListenFor>
+      <Feedback> Checking for the next available {appointmentType} </Feedback>
+      <VoiceCommandService Target="RETVoiceCommandService"/>
+    </Command>
+
+    <PhraseList Label="appointmentType">
+      <Item>Answer Desk appointment</Item>
+      <Item>Personal Training</Item>
+      <Item>Discover More</Item>
+      <Item>Personal Shopping</Item>
+    </PhraseList>
+  </CommandSet>
+</VoiceCommands>

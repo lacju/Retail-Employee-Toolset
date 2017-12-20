@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="retailemployeetoolset.ProductViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:retailemployeetoolset"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FF1B1B1B">
+        <StackPanel HorizontalAlignment="Left" Height="960" VerticalAlignment="Top" Width="285" Background="Black">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Products" VerticalAlignment="Top" Height="75" Width="200" FontSize="48" Foreground="#FFCDCDCD"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,50,0,0" TextWrapping="Wrap" Text="Available Products:" VerticalAlignment="Top" Height="52" Width="200" FontSize="22" Foreground="#FFCDCDCD"/>
+            <TextBlock x:Name="_textBlockMFG" HorizontalAlignment="Left" TextWrapping="Wrap" Text="MFG" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockDescription" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Height="81" Width="285" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockPrice" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockDisplay" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Display" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockGPU" HorizontalAlignment="Left" TextWrapping="Wrap" Text="HDD" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockProcessor" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Processor" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockRAM" HorizontalAlignment="Left" TextWrapping="Wrap" Text="RAM" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockHDDSize" HorizontalAlignment="Left" TextWrapping="Wrap" Text="HDD" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBlock x:Name="_textBlockWeight" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Weight" VerticalAlignment="Top" Height="41" Width="262" Foreground="#FF767676"/>
+            <TextBox x:Name="_TestEnterSKU" TextWrapping="Wrap" Text="Enter SKU:" Height="40" Margin="0,0,0.333,0"/>
+            <TextBox x:Name="_TestMFG" TextWrapping="Wrap" Text="MFG"/>
+            <TextBox x:Name="_TestDesc" TextWrapping="Wrap" Text="Description"/>
+            <Button x:Name="_TestRunSKU" Content="Run SKU" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#33FFFFFF" />
+           
+            
+        </StackPanel>
+        <TextBox x:Name="_PageOutputBox" HorizontalAlignment="Left" Margin="454,50,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="900" Width="855" />
+        <Image x:Name="_ProductImage" HorizontalAlignment="Left" Height="100" Margin="290,135,0,0" VerticalAlignment="Top" Width="100"/>
+
+
+    </Grid>
+</Page>

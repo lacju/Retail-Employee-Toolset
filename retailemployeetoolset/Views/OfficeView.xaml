@@ -1,0 +1,130 @@
+﻿<Page
+    x:Class="retailemployeetoolset.Views.OfficeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:retailemployeetoolset.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:WrapPanel="using:Microsoft.Toolkit.Uwp.UI.Controls.WrapPanel"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d" Height="840" Width="1320">
+
+    <Grid Background="#FF1B1B1B" Width="auto" Height="auto">
+        <ScrollViewer Height="auto"  Width="auto" >
+            <controls:BladeView Margin="0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            BladeMode="Normal" Width="1320" Height="840">
+                <controls:BladeItem Title="office365Blade"
+                                IsOpen="True"
+                                TitleBarVisibility="Collapsed" Width="615" Visibility="Visible" Background="#FF454040" BorderBrush="#FFEC610A" BorderThickness="5" Height="818" Margin="3">
+                    <StackPanel HorizontalAlignment="Left" Height="939"  VerticalAlignment="Top" Width="auto" >
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Text="Microsoft Office 365" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="36" Foreground="#FFCDCDCD"/>
+                        <Image Margin="5" Source="ms-appx:///Assets/OfficeBoxes/officehomebox.png" Height="125" Width="597" />
+                        <TextBlock Margin="5"  TextWrapping="Wrap" Text="Full Applications" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock TextWrapping="Wrap" Text="Office 365 subscriptions include the full desktop versions of your favorite office applications including Word, Powerpoint, Excel, and Outlook" FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="5"  TextWrapping="Wrap" Text="1TB of OneDrive Storage" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin=" 2" TextWrapping="Wrap" Text="Enjoy peace of mind knowing that you can have complete access to your files regardless of where you are or what device you're using." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="5" TextWrapping="Wrap" Text="Always up to date" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2" TextWrapping="Wrap" Text="With an Office 365 subscription you'll always have the most recent version of your favorite Office products" FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2" TextWrapping="Wrap" Text="Edit documents on your phone or tablet" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2" TextWrapping="Wrap" Text="View and edit documents on your Android or iOS device." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2,15,0,0" TextWrapping="Wrap" Text="Includes:" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <Grid  Height="95" Margin="0" VerticalAlignment="Top" Width="604" Background="#FFA29C9C" HorizontalAlignment="Center">
+                            <WrapPanel:WrapPanel HorizontalAlignment="Left" Height="104" VerticalAlignment="Top" Width="604">
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/WordLogo.png" />
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/excelLogo.png" />
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/powerpointLogo.png"/>
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/outlookLogo.png"/>
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/onenoteLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/accessLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/publisherLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/onedriveLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/skypeLogo.png"/>
+                            </WrapPanel:WrapPanel>
+                        </Grid>
+                        <StackPanel Margin="10,20,0,0" Height="38" Width="611" Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="Home or Personal: " FontSize="16" Height="auto" Foreground="#FFCDCDCD" Width="179" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,9,0,8" />
+                            <ComboBox  x:Name="comboBoxHomePersonal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="335">
+                                <ComboBoxItem x:Name="comboBoxItemOfficeHome" Content="Office 365 - Home - 5 Users/5 PCs or Macs"  Height="auto" Width="auto" IsSelected="True"/>
+                                <ComboBoxItem  Content="Office 365 - Personal - 1 Users/1 PCs or Macs" Height="auto" Width="auto"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Margin="10" Height="38" Width="611" Orientation="Horizontal">
+                            <TextBlock TextWrapping="Wrap" Text="Subscription Length: " FontSize="16" Height="auto" Foreground="#FFCDCDCD" Width="179" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,9,0,8" />
+                            <ComboBox  x:Name="comboBoxSubLength" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="335">
+                                <ComboBoxItem  Content="Office 365 -  1 Year  -  $99.99" Height="auto" Width="auto"/>
+                                <ComboBoxItem Content="Office 365 -  2 Years - $199.98" Height="auto" Width="auto"/>
+                                <ComboBoxItem Content="Office 365 -  3 Years - $299.97" Height="auto" Width="auto" IsSelected="True"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <TextBlock   TextWrapping="Wrap" Text="• $20 off of each year (up to 3) when purchased with a PC" FontSize="12" Height="auto" Foreground="#FFCDCDCD" />
+                        <AppBarButton Margin="5"  HorizontalAlignment="Stretch" Icon="Add" Label="Add to Solution" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="office365AddToSolution_Click" Foreground="#FFCDCDCD" />
+                    </StackPanel>
+                </controls:BladeItem>
+
+                <controls:BladeItem Title="officeHBBlade"
+                                IsOpen="True"
+                                TitleBarVisibility="Collapsed" Width="615" Visibility="Visible" Background="#FF454040" BorderBrush="#FFEC610A" BorderThickness="5" Height="818" Margin="3">
+                    <StackPanel HorizontalAlignment="Left" Height="808"  VerticalAlignment="Top" Width="auto" >
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Text="Microsoft Office Home and Business" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="36" Foreground="#FFCDCDCD"/>
+                        <Image Margin="5" Source="ms-appx:///Assets/OfficeBoxes/officehbbox.png" Height="125" Width="auto" />
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Word" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock TextWrapping="Wrap" Text="Create and share professional-looking documents with state-of-the-art editing, reviewing, and sharing tools. The new Design tab provides quick access to features, and Smart Lookup shows relevant contextual information from the web directly inside Word." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2"   TextWrapping="Wrap" Text="Outlook" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin=" 2" TextWrapping="Wrap" Text="Easily manage your email, calendar, contacts, and tasks. Push email support keeps your inbox up to date, conversation view groups related messages, and calendars can be viewed side-by-side for planning." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Excel" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2" TextWrapping="Wrap" Text="Analyze and visualize your data in new and intuitive ways with a fresh user interface plus your favorite keyboard shortcuts. Leverage features like Analysis Toolpak, Slicers, and Formula Builder to save time, so you can focus on insights." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="PowerPoint" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Create, collaborate, and effectively present your ideas with new slide transitions and an improved Animations task pane. Threaded comments alongside your slides help you incorporate feedback into your presentations." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2,15,0,0" TextWrapping="Wrap" Text="Includes:" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <Grid  Height="auto" Margin="0" VerticalAlignment="Top" Width="604" Background="#FFA29C9C" HorizontalAlignment="Center">
+                            <WrapPanel:WrapPanel HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="604">
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/WordLogo.png"/>
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/excelLogo.png" />
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/powerpointLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/outlookLogo.png"/>
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/onenoteLogo.png"/>
+                            </WrapPanel:WrapPanel>
+                        </Grid>
+                        <TextBlock Margin="2,25"  TextWrapping="Wrap" Text="229.99" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock   TextWrapping="Wrap" Text="• $20 off when purchased with a PC" FontSize="12" Height="auto" Foreground="#FFCDCDCD" />
+                        <AppBarButton Margin="5"  HorizontalAlignment="Stretch" Icon="Add" Label="Add to Solution" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="officeHBAddToSolution_Click" Foreground="#FFCDCDCD" />
+                    </StackPanel>
+                </controls:BladeItem>
+                <controls:BladeItem Title="officeHBBlade"
+                                IsOpen="True"
+                                TitleBarVisibility="Collapsed" Width="608" Visibility="Visible" Background="#FF454040" BorderBrush="#FFEC610A" BorderThickness="5" Height="818" Margin="3,0">
+                    <StackPanel HorizontalAlignment="Left" Height="960"  VerticalAlignment="Top" Width="auto" >
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Text="Microsoft Office Home and Student" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="36" Foreground="#FFCDCDCD"/>
+                        <Image Margin="5"  Source="ms-appx:///Assets/OfficeBoxes/officehsbox.png" Height="125" Width="auto" />
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Word" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock TextWrapping="Wrap" Text="Create and share professional-looking documents with state-of-the-art editing, reviewing, and sharing tools. The new Design tab provides quick access to features, and Smart Lookup shows relevant contextual information from the web directly inside Word." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Excel" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Analyze and visualize your data in new and intuitive ways with a fresh user interface plus your favorite keyboard shortcuts. Leverage features like Analysis Toolpak, Slicers, and Formula Builder to save time, so you can focus on insights." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="PowerPoint" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="Create, collaborate, and effectively present your ideas with new slide transitions and an improved Animations task pane. Threaded comments alongside your slides help you incorporate feedback into your presentations." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2" TextWrapping="Wrap" Text="OneNote" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock Margin="2"  TextWrapping="Wrap" Text="It's your very own digital notebook, so you can keep notes, ideas, web pages, photos, even audio and video all in one place. Whether you're at home, in the office, or on the move, you can take it all with you wherever you go while sharing and collaborating with others." FontSize="14" Height="auto" Foreground="#FFCDCDCD"/>
+                        <TextBlock Margin="2, 15,0,0"   TextWrapping="Wrap" Text="Includes:" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <Grid  Height="auto" VerticalAlignment="Top" Width="604" Background="#FFA29C9C" HorizontalAlignment="Center">
+                            <WrapPanel:WrapPanel HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="604">
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/WordLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/excelLogo.png" />
+                                <Image Margin="5" HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/powerpointLogo.png"/>
+                                <Image Margin="5"  HorizontalAlignment="Center" Height="40"  VerticalAlignment="Center" Width="100" Source="ms-appx:///Assets/OfficeLogos/onenoteLogo.png"/>
+                            </WrapPanel:WrapPanel>
+                        </Grid>
+                        <TextBlock Margin="2,25" TextWrapping="Wrap" Text="149.99" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                        <TextBlock   TextWrapping="Wrap" Text="• $20 off when purchased with a PC" FontSize="12" Height="auto" Foreground="#FFCDCDCD" />
+                        <AppBarButton Margin="5"  HorizontalAlignment="Stretch" Icon="Add" Label="Add to Solution" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="officeHSAddToSolution_Click" Foreground="#FFCDCDCD" />
+                    </StackPanel>
+                </controls:BladeItem>
+
+
+
+            </controls:BladeView>
+        </ScrollViewer>
+    </Grid>
+</Page>

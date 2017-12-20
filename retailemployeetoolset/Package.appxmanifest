@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="b7657ddb-b2f7-4885-9e64-d4f2feaf51e1" Publisher="CN=julacont" Version="1.0.2.0" />
+  <mp:PhoneIdentity PhoneProductId="b7657ddb-b2f7-4885-9e64-d4f2feaf51e1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>retailemployeetoolset</DisplayName>
+    <PublisherDisplayName>jlaconto</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="retailemployeetoolset.App">
+      <Extensions>
+        <uap:Extension Category="windows.appService" EntryPoint="retailemployeetoolset.VoiceCommands.RetailEmployeeToolsetVoiceCommandService">
+          <uap:AppService Name="RETVoiceCommandService" />
+        </uap:Extension>
+        <uap:Extension Category="windows.personalAssistantLaunch" />
+      </Extensions>
+      <uap:VisualElements DisplayName="Retail Employee Toolset" Square150x150Logo="Assets\VisualAssets\Square150x150Logo.png" Square44x44Logo="Assets\VisualAssets\Square44x44Logo.png" Description="retailemployeetoolset" BackgroundColor="transparent">
+        <uap:LockScreen Notification="badge" BadgeLogo="Assets\VisualAssets\BadgeLogo.png" />
+        <uap:DefaultTile Wide310x150Logo="Assets\VisualAssets\Wide310x150Logo.png" Square310x310Logo="Assets\VisualAssets\LargeTile.png" Square71x71Logo="Assets\VisualAssets\SmallTile.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\VisualAssets\SplashScreen.png" BackgroundColor="orangeRed" />
+        <uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscape" />
+        </uap:InitialRotationPreference>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

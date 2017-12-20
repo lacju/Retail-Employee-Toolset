@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="retailemployeetoolset.Views.SurfaceSelectedView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:retailemployeetoolset.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wrapPanel="using:Microsoft.Toolkit.Uwp.UI.Controls.WrapPanel"
+    mc:Ignorable="d" Height="840" Width="1320">
+
+    <Grid Background="#FF1B1B1B" Width="auto" Height="auto">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Surface" VerticalAlignment="Top" Height="75" Width="561" FontSize="48" Foreground="#FFCDCDCD" Margin="0,0,-95,0"/>
+        <wrapPanel:WrapPanel Margin="231,75,172,104" >
+            <Button x:Name="_surfacePageSP4Button"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="215" Width="335" Margin="50" Click="_surfacePageSP4Button_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/SPIcon2.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="_surfacePageSurfaceBookButton" HorizontalAlignment="Left" VerticalAlignment="Top" Height="215" Width="335" Margin="50" Click="_surfacePageSurfaceBookButton_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/SBIcon.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="_surfacePageSurfaceStudioButton" HorizontalAlignment="Left" VerticalAlignment="Top" Height="215" Width="335" Margin="50"  Click="_surfacePageSurfaceStudioButton_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/SSIcon.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="_surfacePageSurfaceLaptopButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Height="215" Width="335" Margin="50" Click="_surfacePageSurfaceLaptopButton_Click">
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/SLIcon.png"/>
+                </Button.Background>
+            </Button>
+        </wrapPanel:WrapPanel>
+    </Grid>
+</Page>

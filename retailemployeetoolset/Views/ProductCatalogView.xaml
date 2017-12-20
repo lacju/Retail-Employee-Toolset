@@ -1,0 +1,160 @@
+﻿<Page
+    x:Class="retailemployeetoolset.Views.ProductCatalogView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:retailemployeetoolset.Views"
+    xmlns:models="using:retailemployeetoolset.Models"
+    xmlns:vm="using:retailemployeetoolset.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:models1="using:retailemployeetoolset.Models"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/intera‌​ctivity"
+    xmlns:t="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:interop="using:Windows.UI.Xaml.Interop"
+    mc:Ignorable="d" Height="840" Width="1320">
+
+
+    <Grid Background="#FF1B1B1B">
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left" Width="470">
+                <TextBlock Text="Product Catalog" FontSize="28" Foreground="#FFCDCDCD" Margin="5"/>
+                <Button x:Name="AddCustomerButton"  HorizontalAlignment="Stretch" Content="Clear All Filters" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="15" Foreground="#FFCDCDCD" Click="AddCustomerButton_Click" />
+                <ScrollViewer  Margin="5,5,0,5" Height="115" BorderThickness="3" BorderBrush="#FF575454">
+                    <StackPanel Height="146" Width="435">
+                        <TextBlock Text="Category:" Foreground="#FFCDCDCD"/>
+                        <ListView x:Name="CategoryList" ItemsSource="{Binding CategoryCheckboxesACV}" >
+                            <ListView.ItemsPanel >
+                                <ItemsPanelTemplate >
+                                    <ItemsWrapGrid Orientation="Horizontal" Width="435"  />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <CheckBox Foreground="#FFCDCDCD" IsChecked="{Binding IsCheckedCategory, Mode=TwoWay}"  >
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="Checked">
+                                                <core:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ElementName=CategoryList,  Path=DataContext.CheckCategory}" />
+                                            </core:EventTriggerBehavior>
+                                            <core:EventTriggerBehavior EventName="Unchecked">
+                                                <core:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ElementName=CategoryList,  Path=DataContext.UncheckCategory}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
+                                        <TextBlock Text="{Binding Category}"  Foreground="#FFCDCDCD"/>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer Margin="5,5,0,5" Height="200" BorderThickness="3" BorderBrush="#FF575454">
+                    <StackPanel>
+                        <TextBlock Text="Manufacturer:" Foreground="#FFCDCDCD"/>
+                        <ListView x:Name="ManufacturerList" ItemsSource="{Binding ManufacturerCheckboxesACV}">
+                            <ListView.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <ItemsWrapGrid Orientation="Horizontal"  Width="435" />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <CheckBox Foreground="#FFCDCDCD" IsChecked="{Binding IsCheckedMfg, Mode=TwoWay}">
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="Checked">
+                                                <core:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ElementName=ManufacturerList,  Path=DataContext.CheckManufacterer}" />
+                                            </core:EventTriggerBehavior>
+                                            <core:EventTriggerBehavior EventName="Unchecked">
+                                                <core:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ElementName=ManufacturerList,  Path=DataContext.UncheckManufacterer}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
+                                        <TextBlock Text="{Binding Manufacturer}"  Foreground="#FFCDCDCD"/>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ScrollViewer  Margin="5,5,0,5" Height="115" BorderThickness="3" BorderBrush="#FF575454">
+                    <StackPanel Height="146" Width="435">
+                        <TextBlock Text="Price:" Foreground="#FFCDCDCD"/>
+                        <ListView x:Name="PriceList" ItemsSource="{Binding PriceCheckboxesACV}" >
+                            <ListView.ItemsPanel >
+                                <ItemsPanelTemplate >
+                                    <ItemsWrapGrid Orientation="Horizontal" Width="435"  />
+                                </ItemsPanelTemplate>
+                            </ListView.ItemsPanel>
+                            <ListView.ItemTemplate>
+                                <DataTemplate >
+                                    <CheckBox Foreground="#FFCDCDCD" IsChecked="{Binding IsCheckedPrice, Mode=TwoWay}"  >
+                                        <interactivity:Interaction.Behaviors>
+                                            <core:EventTriggerBehavior EventName="Checked">
+                                                <core:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ElementName=CategoryList,  Path=DataContext.CheckPrice}" />
+                                            </core:EventTriggerBehavior>
+                                            <core:EventTriggerBehavior EventName="Unchecked">
+                                                <core:InvokeCommandAction CommandParameter="{Binding}" Command="{Binding ElementName=CategoryList,  Path=DataContext.UncheckPrice}" />
+                                            </core:EventTriggerBehavior>
+                                        </interactivity:Interaction.Behaviors>
+                                        <TextBlock Text="{Binding PriceRange}"  Foreground="#FFCDCDCD"/>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+            <StackPanel Margin="3">
+                <TextBlock Text="Products" FontSize="28" Foreground="#FFCDCDCD" Margin="5"/>
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <TextBlock Text="Search: " FontSize="24" Foreground="#FFCDCDCD" Width="86" Margin="3"/>
+                    <TextBox x:Name="SearchTextBoxt" TextChanged="SearchTextBoxt_TextChanged" Width="725" Margin="3" TextChanging="SearchTextBoxt_TextChanging"/>
+                </StackPanel>
+                <ListView ItemsSource="{x:Bind pcvm.ProductsAdvancedView}"  Width="837" Margin="5" Height="728">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Product">
+                            <controls:Expander x:Name="Expander1" VerticalAlignment="Top" Margin="0,0,0,10"
+                                           Header=""
+                                           IsExpanded="False" Width="810" Foreground="#FFCDCDCD">
+                                <controls:Expander.HeaderTemplate>
+                                    <DataTemplate  x:DataType="models:Product">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Manufacturer}" Foreground="#FFCDCDCD" Width="125" Margin="5"/>
+                                            <TextBlock Text="{Binding Name}" Foreground="#FFCDCDCD" Width="485" Margin="5"/>
+                                            <TextBlock Text="{Binding Price}" Foreground="#FFCDCDCD" Width="115" Margin="5"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </controls:Expander.HeaderTemplate>
+                                <Grid Height="auto" Background="#FF272727" Width="805" BorderThickness="3" BorderBrush="DimGray" x:Name="test">
+                                    <StackPanel Orientation="Horizontal" Height="auto">
+                                        <StackPanel Width="275" Height="auto">
+                                            <TextBlock Text="{Binding Manufacturer}" Foreground="#FFCDCDCD" FontSize="24" Height="auto" Margin="3"/>
+                                            <Image Source="{Binding ImageUrl}" Margin="3" Height="151"/>
+                                            <TextBlock Text="{Binding Price}" Foreground="#FFCDCDCD" FontSize="24" Height="auto" Margin="3" FlowDirection="RightToLeft"/>
+                                            <Button  Grid.Column="4" HorizontalAlignment="Center"  Content="Add To Solution" Width="255" Background="#FF007ACC" CommandParameter="{Binding}" Command="{Binding ElementName=Expander1,  Path=DataContext.AddToSolution}" Foreground="#FFCDCDCD" Height="47" Margin="10"/>
+                                        </StackPanel>
+                                        <StackPanel Width="522">
+                                            <TextBlock Text="{Binding Name}" Foreground="#FFCDCDCD" FontSize="18" FontWeight="Bold" Height="auto" Margin="2"/>
+                                            <TextBlock Text="{Binding Description}" Foreground="#FFCDCDCD" FontSize="16" Height="auto" Margin="3" TextWrapping="Wrap"/>
+                                            <TextBlock Text="{Binding Processor}" Foreground="#FFCDCDCD" FontSize="14" FontStyle="Italic" Height="auto" Margin="5,8,5,5" FlowDirection="RightToLeft"/>
+                                            <TextBlock Text="{Binding RAM}" Foreground="#FFCDCDCD" FontSize="14" FontStyle="Italic" Height="auto" Margin="5" FlowDirection="RightToLeft"/>
+                                            <TextBlock Text="{Binding HDDCap}" Foreground="#FFCDCDCD" FontSize="14" FontStyle="Italic" Height="auto" Margin="5" FlowDirection="RightToLeft"/>
+                                            <TextBlock Text="{Binding GPU}" Foreground="#FFCDCDCD" FontSize="14" FontStyle="Italic" Height="auto" Margin="5" FlowDirection="RightToLeft"/>
+                                            <TextBlock Text="{Binding Display}" Foreground="#FFCDCDCD" FontSize="14" FontStyle="Italic" Height="auto" Margin="5" FlowDirection="RightToLeft"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                            </controls:Expander>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+
+
+

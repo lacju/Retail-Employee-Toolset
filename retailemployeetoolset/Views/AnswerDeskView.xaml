@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="retailemployeetoolset.Views.AnswerDeskView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:retailemployeetoolset.Views"
+    xmlns:models="using:retailemployeetoolset.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="840" Width="1320">
+
+    <Grid Background="#FF1B1B1B">
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="1045">
+                <TextBlock Text="Answer Desk Appointments" FontSize="36" Margin="5" Foreground="#FFCDCDCD"/>
+                <GridView
+                      x:Name="AppointmentList" Height="769" Margin="10,5" BorderBrush="#FF575454" BorderThickness="3" ItemsSource="{x:Bind advm.Appointments}">
+                    <GridView.ItemContainerStyle>
+                        <Style TargetType="FrameworkElement">
+                            <Setter Property="Margin" Value="2,0,0,-18"/>
+                        </Style>
+                    </GridView.ItemContainerStyle>
+                    <GridView.Header>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="125"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="125"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="180"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Customer" FontSize="18" Grid.Column="0" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Topic" FontSize="18" Grid.Column="1" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Status" FontSize="18" Grid.Column="2" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Scheduled" FontSize="18" Grid.Column="3" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Created By" FontSize="18" Grid.Column="4" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Checked In" FontSize="18" Grid.Column="5" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Checked In by" FontSize="18" Grid.Column="6" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                            <TextBlock  Text="Description" FontSize="18" Grid.Column="7" TextAlignment="Center" Foreground="#FFCDCDCD"/>
+                        </Grid>
+                    </GridView.Header>
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Appointment">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="125"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="125"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="180"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="0">
+                                    <TextBlock Text="{x:Bind CustomerName}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="1">
+                                    <TextBlock  Text="{x:Bind AppointmentTopic}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="2">
+                                    <TextBlock  Text="{x:Bind AppointmentStatus}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="3">
+                                    <TextBlock  Text="{x:Bind AppointmentScheduledTime}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="4">
+                                    <TextBlock  Text="{x:Bind AppointmentCreatedBy}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="5">
+                                    <TextBlock  Text="{x:Bind AppointmentCheckedinTime}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="6">
+                                    <TextBlock  Text="{x:Bind AppointmentCheckedinBy}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                                <Border BorderThickness="2" BorderBrush="#FF575454" Grid.Column="7">
+                                    <TextBlock  Text="{x:Bind AppointmentDescription}" FontSize="16" Foreground="#FFCDCDCD"/>
+                                </Border>
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </StackPanel>
+            <StackPanel Width="276">
+                <StackPanel Height="684" Margin="0,0,10,0">
+                    <TextBlock Text="Manage Queue"
+                       FontSize="20"
+                       Margin="5"
+                       Foreground="#FFCDCDCD" Height="28" RenderTransformOrigin="0.5,0.5"/>
+                    <Button x:Name="AddAppointment"  HorizontalAlignment="Stretch" Content="New Appointment" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="AddAppointment_Click" Foreground="#FFCDCDCD" />
+                    <Button x:Name="CheckInAppointment"  HorizontalAlignment="Stretch" Content="Check In" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="CheckInAppointment_Click" Foreground="#FFCDCDCD"/>
+                    <Button x:Name="CompleteAppointment"  HorizontalAlignment="Stretch" Content="Complete" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="CompleteAppointment_Click" Foreground="#FFCDCDCD"/>
+                    <Button x:Name="CancelAppointment"  HorizontalAlignment="Stretch" Content="Cancel" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="CancelAppointment_Click" Foreground="#FFCDCDCD"/>
+                    <Button x:Name="DetailsAppointment"  HorizontalAlignment="Stretch" Content="Details" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="DetailsAppointment_Click" Foreground="#FFCDCDCD"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button x:Name="SelectDate"  HorizontalAlignment="Stretch" Content="Select Date" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="SelectDate_Click" />
+                    <Button x:Name="SelectToday"  HorizontalAlignment="Stretch" Content="Select Today" VerticalAlignment="Stretch" Height="60" Background="#FF007ACC" Margin="5" Click="SelectToday_Click" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

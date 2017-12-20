@@ -1,0 +1,187 @@
+﻿<Page
+    x:Class="retailemployeetoolset.Views.SurfaceBookView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:retailemployeetoolset.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:WrapPanel="using:Microsoft.Toolkit.Uwp.UI.Controls.WrapPanel"
+    mc:Ignorable="d" Height="840" Width="1320">
+
+    <Grid Background="#FF1B1B1B">
+
+        <controls:BladeView Margin="715,0,10,0"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Visibility="Visible"
+                            BladeMode="Normal" 
+                            IsEnabled="False"
+                            x:Name="CompleteBladeView">
+            <controls:BladeItem x:Name="consumerCompleteBlade"
+                                IsOpen="False"
+                                TitleBarVisibility="Visible" Width="590"  Background="#FF1F1E1E" BorderThickness="5" BorderBrush="#FF555555" >
+                <StackPanel HorizontalAlignment="Left" Height="auto"  VerticalAlignment="Top" Width="592">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="warrantyPageTitleMicrosoft" Text="Microsoft Complete" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="36" Foreground="#FFCDCDCD"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="warrantyPageTitleOEM" Text="2 Years" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="24" Foreground="#FFCDCDCD" Visibility="Visible"/>
+                    <TextBlock Margin="5" x:Name="completeADHTitleConsumer" TextWrapping="Wrap" Text="Accidental Damage Protection" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock x:Name="completeConsumerDesc" TextWrapping="Wrap" Text="With Complete, you get two years of accidental damage protection—even from drops and spills, from the moment you leave the store." FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Margin="2" x:Name="completeConsumerClaimLine" TextWrapping="Wrap" Text="• Limited to two out of warranty claims." FontSize="14" Height="auto" Foreground="#FFCDCDCD" />
+                    <TextBlock Margin="2" x:Name="completeConsumerDeductCost" TextWrapping="Wrap" Text="• $49 Deductible per claim" FontSize="14" Height="auto" Foreground="#FFCDCDCD" />
+                    <TextBlock Margin="5"  x:Name="completeConsumerMFGTitle" TextWrapping="Wrap" Text="Extended Manufacturers Warranty" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock Margin=" 2" x:Name="consumerCompleteMFGExtensionDesc" TextWrapping="Wrap" Text="With an extra year of manufacturer warranty support you can enjoy the peace of mind that comes with knowing that your device is covered against any defects or hardware issues" FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Margin="5" x:Name="consumerCompleteADServicesTitle" TextWrapping="Wrap" Text="Answer Desk Services" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock Margin="2" x:Name="consumerCompleteADDesc" TextWrapping="Wrap" Text="Get help when you need it through our many free and premium Answer Desk services at no additional cost." FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Margin="2" x:Name="consumerCompletePTTitle" TextWrapping="Wrap" Text="Personalized Training Sessions" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock Margin="2" x:Name="consumerCompletePTDesc" TextWrapping="Wrap" Text="Get the most out of your device by taking advantage of personalized, one-on-one training where you decide what you'd like to learn." FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Height="auto" Foreground="#FFCDCDCD" Margin="2">
+                                        <Run Text="$" />
+                                        <Run Text="{Binding Path=ConsumerCompletePrice}" />
+                    </TextBlock>
+                    <TextBlock Margin="2" x:Name="consumerCompletePriceBundleCaveat" TextWrapping="Wrap" Text="• Price may be reduced as part of various bundles or promotions" FontSize="14" Height="auto" Foreground="#FFCDCDCD" />
+                    <AppBarButton Margin="30" x:Name="consumerCompleteAddToSolution" HorizontalAlignment="Stretch" Icon="Add" Label="Add to Solution" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="consumerCompleteAddToSolution_Click" Foreground="#FFCDCDCD" />
+                    <AppBarButton Margin="5" x:Name="consumerCompleteDontAddToSolution" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="consumerCompleteDontAddToSolution_Click"  >
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="No Thanks" FontFamily="Segoe UI" Foreground="#FFCDCDCD"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                </StackPanel>
+            </controls:BladeItem>
+            <controls:BladeItem x:Name="commercialCompleteBlade" 
+                                IsOpen="False"  Height="auto"
+                                TitleBarVisibility="Visible" Width="590"  Background="#FF1F1E1E" BorderThickness="5" BorderBrush="#FF555555">
+                <StackPanel HorizontalAlignment="Left" Height="960"  VerticalAlignment="Top" Width="auto" Margin="0,0,0,-2.667">
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="warrantyPageTitleMicrosoftComercialComplete" Text="Microsoft Commercial Complete" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="36" Foreground="#FFCDCDCD"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" x:Name="warrantyPageCommercialCompleteLength" Text="3-4 Years" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="24" Foreground="#FFCDCDCD" Visibility="Visible"/>
+                    <TextBlock Margin="5" x:Name="completeADHTitleCommercial" TextWrapping="Wrap" Text="Accidental Damage Protection" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock x:Name="completeCommercialDesc" TextWrapping="Wrap" Text="With Commerical Complete, you get 3-4 years of accidental damage protection—even from drops and spills, from the moment you leave the store." FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Margin="2" x:Name="completeCommercialClaimLine" TextWrapping="Wrap" Text="• Limited to two out of warranty claims." FontSize="14" Height="auto" Foreground="#FFCDCDCD" />
+                    <TextBlock Margin="2" x:Name="completeCommercialDeductCost" TextWrapping="Wrap" Text="• No deductible required for claims" FontSize="14" Height="auto" Foreground="#FFCDCDCD" />
+                    <TextBlock Margin="5"  x:Name="completeCommercialMFGTitle" TextWrapping="Wrap" Text="Extended Manufacturers Warranty" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock Margin=" 2" x:Name="commercialCompleteMFGExtensionDesc" TextWrapping="Wrap" Text="With an extra 2-3 of manufacturer warranty support you can enjoy the peace of mind that comes with knowing that your device is covered against any defects or hardware issues" FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Margin="5" x:Name="commercialCompleteADServicesTitle" TextWrapping="Wrap" Text="Answer Desk Services" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock Margin="2" x:Name="commercialCompleteADDesc" TextWrapping="Wrap" Text="Get help when you need it through our many free and premium Answer Desk services at no additional cost." FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <TextBlock Margin="2" x:Name="commercialCompletePTTitle" TextWrapping="Wrap" Text="Personalized Training Sessions" FontSize="20" Height="auto" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+                    <TextBlock Margin="2" x:Name="commercialCompletePTDesc" TextWrapping="Wrap" Text="Get the most out of your device by taking advantage of personalized, one-on-one training where you decide what you'd like to learn." FontSize="16" Height="auto" Foreground="#FFCDCDCD"/>
+                    <StackPanel Margin="30" Height="38" Width="611" Orientation="Horizontal">
+                        <TextBlock x:Name="commercialCompleteDuraction" TextWrapping="Wrap" Text="Plan length: " FontSize="18" Height="auto" Foreground="#FFCDCDCD" Width="179" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,9,0,8" />
+                        <ComboBox  x:Name="comboBoxTermLength" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="298">
+                            <ComboBoxItem x:Name="comboBoxComComlete3Yr" Height="auto" Width="auto">
+                                <TextBlock>
+                                        <Run Text="Microsoft Commerical Complete - 3 Years - $" />
+                                        <Run Text="{Binding Path=CommercialCompleteThreeYearPrice}" />
+                                </TextBlock>
+                            </ComboBoxItem>
+                            <ComboBoxItem x:Name="comboBoxComComlete4Yr" Height="auto" Width="auto">
+                                <TextBlock>
+                                        <Run Text="Microsoft Commerical Complete - 4 Years - $" />
+                                        <Run Text="{Binding Path=CommercialCompleteFourYearPrice}" />
+                                </TextBlock>
+                            </ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBlock Margin="2" x:Name="commercialCompletePriceBundleCaveat" TextWrapping="Wrap" Text="• Price may be reduced as part of various bundles or promotions" FontSize="12" Height="auto" Foreground="#FFCDCDCD" />
+                    <AppBarButton Margin="5" x:Name="commercialCompleteAddToSolution" HorizontalAlignment="Stretch" Icon="Add" Label="Add to Solution" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="commercialCompleteAddToSolution_Click" Foreground="#FFCDCDCD" />
+                    <AppBarButton Margin="5" x:Name="commercialCompleteDontAddToSolution" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC" Click="commercialCompleteDontAddToSolution_Click"  >
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="No Thanks" FontFamily="Segoe UI" Foreground="#FFCDCDCD"/>
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                </StackPanel>
+            </controls:BladeItem>
+        </controls:BladeView>
+
+        <StackPanel HorizontalAlignment="Left" Height="881"  VerticalAlignment="Top" Width="691">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Surface Book" VerticalAlignment="Top" Height="auto" Width="auto" FontSize="36" Foreground="#FFCDCDCD"/>
+            <TextBlock Margin="2" x:Name="textBlock0" TextWrapping="Wrap" Text="The ultimate laptop" FontSize="20" Height="37" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+            <TextBlock Margin="2" x:Name="textBlock1" TextWrapping="Wrap" Text="Incredibly powerful and meticulously crafted, Surface Book is a revolution in laptop design. The detachable 13.5 PixelSense Display is optimized for Pen and touch and has higher resolution than MacBook Pro 13.1 With the full power of a high performance laptop and the versatility of a tablet, Surface Book gives you everything you need to work with professional-grade software, anywhere you want." FontSize="14" Height="82" Foreground="#FFCDCDCD"/>
+            <TextBlock Margin="2" x:Name="textBlock2" TextWrapping="Wrap" Text="Built for performance" FontSize="20" Height="35" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+            <TextBlock Margin="2" x:Name="textBlock3" TextWrapping="Wrap" Text="Surface Book is built to run all the professional-grade software you need for engineering, design, and everything in-between. Intel Core processors have twice the power of a MacBook Pro 13 with an optional NVIDIA GeForce dGPU for unmatched graphics performance. And up to 12 hours of battery life for video playback keeps you going all day, every day, so you can bring your work anywhere." FontSize="14" Height="99" Foreground="#FFCDCDCD"/>
+            <TextBlock Margin="2" x:Name="textBlock4" TextWrapping="Wrap" Text="Meticulously crafted and built to last" FontSize="20" Height="40" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+            <TextBlock Margin="2" x:Name="textBlock5" TextWrapping="Wrap" Text="Surface Book was carefully designed to be a powerful laptop that is thin enough to take anywhere without losing an ounce of performance. It's built with a light magnesium chassis and an innovative Dynamic Fulcrum Hinge to keep it balanced at any angle." FontSize="14" Height="81" Foreground="#FFCDCDCD"/>
+            <TextBlock Margin="2" x:Name="textBlock6" TextWrapping="Wrap" Text="Detachable PixelSense Display, with Pen and touch" FontSize="20" Height="35" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+            <TextBlock Margin="2" x:Name="textBlock7" TextWrapping="Wrap" Text="The 13.5 PixelSense Display on Surface Book is simply stunning, while working perfectly with Pen and touch. The 6 million pixels give you unbeatable resolution and color rivaling real life to bring your creations to life. Detach the display to transform Surface Book into a thin and light Intel Core i5/i7 PC, that runs professional grade software. Surface Pen has 1024 levels of pressure sensitivity and an eraser on the other end, so handwritten notes on your screen are just like pen on paper." FontSize="14" Height="112" Foreground="#FFCDCDCD"/>
+            <TextBlock Margin="2" x:Name="textBlock8" TextWrapping="Wrap" Text="Watch, draw, or design" FontSize="20" Height="33" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+            <TextBlock Margin="2" x:Name="textBlock9" TextWrapping="Wrap" Text="Once detached, flip the screen 180 degrees and reattach it to the Integrated Keyboard to present, watch movies, or design with Surface Pen. And you're only a click away from the Windows Ink workspace, with quick access to sticky notes, a blank page for sketching, or a quick screenshot that you can mark-up and share." FontSize="14" Height="73" Foreground="#FFCDCDCD"/>
+            <TextBlock Margin="2" x:Name="textBlock10" TextWrapping="Wrap" Text="Engineered for professional-grade software" FontSize="20" Height="35" Foreground="#FFCDCDCD" FontWeight="Bold"/>
+            <TextBlock Margin="2" x:Name="textBlock11" TextWrapping="Wrap" Text="Surface Book speeds through intensive professional software, like SolidWorks 3D CAD, AutoCAD Revit, and Adobe Premiere Pro. With the power to run this software anywhere, you're no longer chained to your desk. Now you can create anywhere and everywhere, and the latest version of Windows 10 will always include up-to-date security and protection." FontSize="14" Height="79" Foreground="#FFCDCDCD"/>
+
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="881" Margin="728,0,0,0" VerticalAlignment="Top" Width="584" x:Name="SurfaceSelectionStackPanel" Visibility="Visible">
+            <TextBlock Margin="10,2,2,2" x:Name="textBlock14" TextWrapping="Wrap" Text="Processor:" FontSize="32" Height="56" Foreground="#FFCDCDCD"/>
+            <StackPanel Margin="30,0" Height="80" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="524">
+
+                <AppBarToggleButton Margin="5" x:Name="procToggleButtoni5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="250"  RenderTransformOrigin="0.5,0.5" Checked="procToggleButtoni5_Checked" Unchecked="procToggleButtoni5_Unchecked">
+                    <AppBarToggleButton.Icon>
+                        <FontIcon FontFamily="Segoe UI" Glyph="I5" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                    </AppBarToggleButton.Icon>
+                </AppBarToggleButton>
+                <AppBarToggleButton Margin="5" x:Name="procToggleButtoni7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="250"  RenderTransformOrigin="0.5,0.5" Checked="procToggleButtoni7_Checked" Unchecked="procToggleButtoni7_Unchecked">
+                    <AppBarToggleButton.Icon>
+                        <FontIcon FontFamily="Segoe UI" Glyph="I7" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                    </AppBarToggleButton.Icon>
+                </AppBarToggleButton>
+            </StackPanel>
+            <StackPanel x:Name="GPUPanel">
+                <TextBlock Margin="10,2,2,2" x:Name="GPUTitle" TextWrapping="Wrap" Text="GPU:" FontSize="32" Height="56" Foreground="#FFCDCDCD" Visibility="Visible"/>
+            <StackPanel  Height="80" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0" Width="524">
+                <AppBarToggleButton Margin="5" x:Name="GPUYesToggleButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="260"  Visibility="Visible" Checked="GPUYesToggleButton_Checked" Unchecked="GPUYesToggleButton_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="With GPU" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+                <AppBarToggleButton Margin="5" x:Name="GPUNoToggleButton" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="260" Visibility="Visible" Checked="GPUNoToggleButton_Checked" Unchecked="GPUNoToggleButton_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="Without GPU" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+            </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="MemoryPane">
+                <TextBlock Margin="10,2,2,2" x:Name="memoryTitle" TextWrapping="Wrap" Text="Memory:" FontSize="32" Height="56" Foreground="#FFCDCDCD" Visibility="Visible"/>
+            <StackPanel  Height="80" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,0" Width="524">
+                <AppBarToggleButton Margin="5" x:Name="ramToggleButton8gb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="250"  Visibility="Visible" Checked="ramToggleButton8gb_Checked" Unchecked="ramToggleButton8gb_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="8GB" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+                <AppBarToggleButton Margin="5" x:Name="ramToggleButton16gb" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="250"  Visibility="Visible" Checked="ramToggleButton16gb_Checked" Unchecked="ramToggleButton16gb_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="16GB" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+            </StackPanel>
+            </StackPanel>
+
+            <StackPanel x:Name="StoragePane">
+                <TextBlock Margin="10,2,2,2" x:Name="storageTitle" TextWrapping="Wrap" Text="Storage:" FontSize="32" Height="56" Foreground="#FFCDCDCD" Visibility="Visible"/>
+            <StackPanel  Height="80" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Width="524" Margin="30,0">
+                <AppBarToggleButton Margin="5" x:Name="hddToggleButton128" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="170" Visibility="Visible" Checked="hddToggleButton128_Checked" Unchecked="hddToggleButton128_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="128GB" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+                <AppBarToggleButton Margin="5" x:Name="hddToggleButton256" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="170"  Visibility="Visible" Checked="hddToggleButton256_Checked" Unchecked="hddToggleButton256_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="256GB" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+                <AppBarToggleButton Margin="5" x:Name="hddToggleButton512" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FF007ACC" Width="170"  Visibility="Visible" Checked="hddToggleButton512_Checked" Unchecked="hddToggleButton512_Unchecked">
+                        <AppBarToggleButton.Icon>
+                            <FontIcon FontFamily="Segoe UI" Glyph="512GB" Margin="0,0,0,-15" Foreground="#FFCDCDCD"/>
+                        </AppBarToggleButton.Icon>
+                    </AppBarToggleButton>
+            </StackPanel>
+        </StackPanel>
+            <StackPanel x:Name="PriceButtonPanel">
+                <StackPanel Margin="10,30,-1,5" x:Name="pricePanel" Height="48" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="575" Visibility="Visible">
+                <TextBlock  x:Name="priceTitle" TextWrapping="Wrap" Text="Price:" FontSize="36" Height="56" Foreground="#FFCDCDCD" Width="145" Margin="0,0,270,0"/>
+                <TextBlock  x:Name="dollarSign" TextWrapping="Wrap" Text="$" FontSize="36" Height="56" Foreground="#FFCDCDCD" Width="20" Margin="1,1,1,-9"   />
+                    <TextBlock TextWrapping="Wrap" FontSize="36" Height="56" Foreground="#FFCDCDCD" Width="149" Margin="0,0,0,-8" Text="{Binding Path=SurfacePrice}" TextAlignment="Right" />
+                </StackPanel>
+                <AppBarButton Margin="30" x:Name="addSPToSolutionButton" HorizontalAlignment="Stretch" Icon="Add" Label="Add to Solution" VerticalAlignment="Stretch" Width="Auto" Background="#FF007ACC"  Visibility="Visible" Height="75" Click="addSPToSolutionButton_Click" Foreground="#FFCDCDCD"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
